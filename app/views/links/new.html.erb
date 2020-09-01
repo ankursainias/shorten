@@ -1,0 +1,16 @@
+
+<p>Enter url</p>
+
+<div class="form">
+	<%= form_for @link, url: links_path, remote: true do |f| %>
+		<div class="field">
+			<%= f.text_area :url %>
+		</div>
+		<div class="action">
+			<%= f.submit 'Get Short Url' %>
+		</div>
+	<% end %>
+</div>
+
+
+<div id="short-url"></div>
