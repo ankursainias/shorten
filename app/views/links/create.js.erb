@@ -1,3 +1,6 @@
-
-
-document.getElementById('short-url').innerHTML = "<p>Short Url:-  <%= @short_url %></p>"
+<% if @link.errors.any? %>
+	document.getElementById('errors').innerHTML = "<%= @link.errors.full_messages.join(",") %>"
+<%else%>
+	document.getElementById('short-url').innerHTML = "<p>Short Url:-  <%= @short_url %></p>"
+	document.getElementById('errors').innerHTML = ''
+<%end%>

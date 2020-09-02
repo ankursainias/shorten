@@ -4,6 +4,8 @@
 	<h2><%= link.url %></h2>
 	<p><%=  request.base_url + '/'+ link&.slug %></p>
 	<p>Total clicked:- <%=   link.clicked %></p>
-	<p>Top countries:- <%=   link.top_countries %></p>
+	<% if link.clicked > 0 %>
+		<p>Top countries:- <%=   link.top_countries %></p>
+	<% end %>
 	<hr/>
 <% end %>

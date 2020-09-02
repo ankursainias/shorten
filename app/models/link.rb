@@ -6,7 +6,10 @@ class Link < ActiveRecord::Base
   validates :url, presence: true, format: URI::regexp(%w[http https])
   validates_length_of :url, within: 3..255,  on: :create
   
-  validates :slug, presence: true, uniqueness: { case_sensitive: false }
+  validates :slug, presence: true, 
+                  uniqueness: { case_sensitive: false }
+
+  
   validates_length_of :slug, is: 5,  on: :create
 
   before_validation :set_slug, on: :create

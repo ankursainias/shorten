@@ -15,6 +15,7 @@ class LinksController < ApplicationController
   # redirect to original url
   def show
     link  = Link.find_by(slug: params[:slug])
+
     respond_to do |format|
       if link.expired?
         format.html { render :file => "#{Rails.root}/public/404", status: 404 }
@@ -32,12 +33,10 @@ class LinksController < ApplicationController
   	@link = Link.new(link_params)
 
   	respond_to do |format|
-	  	if @link.save!
+	  	if @link.save
 	  		 short_url
-  		 format.js
-	  	else
-	  		format.html { redirect_to 'link/new'} 
 	  	end
+      format.js
   	end
   end
 

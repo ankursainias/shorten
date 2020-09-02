@@ -1,0 +1,5 @@
+en:
+  model: 
+    link:
+      validation:
+        presence: 'Saved the link without a %{attribute}'

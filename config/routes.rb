@@ -4,13 +4,10 @@ Rails.application.routes.draw do
 
   root 'links#new'
   
-  resources :links, only: [:new, :create] do 
-  	collection do 
-  		get 'stats'
-  	end
-  end
+  resources :links, only: [:new, :create] 
 
   get '/stats' => 'links#stats'
+  get '/:slug' => 'links#show'
 
 end
 

@@ -4,12 +4,8 @@ one:
   url: MyString
   slug: MyString
   clicked: 1
-  ip_address: MyString
-  country: MyString
 
-two:
-  url: MyString
-  slug: MyString
+u1:
+  url: 'http://localhost:3000/links/new'  
+  slug: '12abc'
   clicked: 1
-  ip_address: MyString
-  country: MyString
